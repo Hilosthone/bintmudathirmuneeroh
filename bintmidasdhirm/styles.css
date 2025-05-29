@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Scheherazade+New&family=Lateef&family=El+Messiri&family=Dancing+Script&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  background-color: #4b0082;
+  font-family: 'Dancing Script', cursive;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.name-cloud {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.floating-name {
+  position: absolute;
+  color: #e0b3ff;
+  text-shadow: 0 0 15px #ffccff;
+  animation: float 10s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.poem-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #e0b3ff;
+  color: #ffe6ff;
+  font-size: 1rem;
+  z-index: 3;
+  text-align: left;
+  direction: ltr; /* 💜 FIX: Aligns English text & punctuation */
+  font-family: 'El Messiri', sans-serif;
+  line-height: 1.7;
+}
+
+.poem-container h2 {
+  margin-bottom: 10px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  color: #ffccff;
+  text-shadow: 0 0 8px #fff;
+}
+
+.poem-container p {
+  margin: 0.4em 0;
+}
+
+.poem-container .author {
+  margin-top: 12px;
+  font-style: italic;
+  font-size: 1rem;
+  color: #e6ccff;
+}
+
+.poem-container::-webkit-scrollbar {
+  width: 4px;
+}
+.poem-container::-webkit-scrollbar-thumb {
+  background-color: #b580ff;
+  border-radius: 4px;
+}
